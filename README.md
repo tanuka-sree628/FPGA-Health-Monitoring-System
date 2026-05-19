@@ -2,7 +2,7 @@
 
 ## Overview
 
-A hardware-implemented health monitoring solution built in Verilog HDL and deployed on the EDGE Artix-35T FPGA Development Board. The design acquires health-related input signals, classifies their severity in real time, and communicates outcomes through LEDs, a buzzer, and an LCD panel. Before any alert is raised, a dedicated persistence verification stage confirms that the abnormal condition is sustained rather than transient — reducing false positives and improving overall system reliability.
+A hardware-implemented health monitoring solution built in Verilog and deployed on the EDGE Artix-35T FPGA Development Board. The design acquires health-related input signals, classifies their severity in real time, and communicates outcomes through LEDs, a buzzer, and an LCD panel. Before any alert is raised, a dedicated persistence verification stage confirms that the abnormal condition is sustained rather than transient — reducing false positives and improving overall system reliability.
 
 ---
 
@@ -10,7 +10,7 @@ A hardware-implemented health monitoring solution built in Verilog HDL and deplo
 
 - Continuous real-time acquisition and classification of health parameters
 - Persistence-based confirmation before alert escalation
-- Two-tier alert detection: HELP and CRITICAL severity levels
+- Three-tier alert detection: SAFE,HELP and CRITICAL severity levels
 - LCD panel integration for live status display
 - LED array and buzzer for immediate multi-sensory notification
 - Modular, maintainable Verilog HDL design
@@ -58,7 +58,7 @@ FPGA-Health-Monitoring-System/
 ## Module Descriptions
 
 ### `top.v`
-Root integration module that connects all subsystems and orchestrates end-to-end system operation.
+Root integration module that connects all subsystems and is responsible for end-to-end system operation.
 
 ### `timer.v`
 Produces the timing pulses and synchronization signals that coordinate activity across every module in the design.
@@ -161,21 +161,11 @@ Functional verification was performed using the `top_tb.v` testbench. The simula
 
 ## Results
 
-- Synthesis and place-and-route completed without critical violations
-- HELP and CRITICAL alerts triggered correctly under defined abnormal conditions
+- Synthesis completed without critical violations
+- SAFE,HELP and CRITICAL alerts triggered correctly under defined health conditions
 - LCD display maintained stable, accurate output throughout all test scenarios
 - Simulation waveforms match expected behavior across every test case
-- Full hardware functionality confirmed on the target FPGA board
-
----
-
-## Future Enhancements
-
-- Remote monitoring via IoT connectivity
-- Wireless sensor integration to eliminate cabled interfaces
-- Cloud-based data archiving for long-term health trend analysis
-- AI-driven anomaly detection and predictive alerting
-- Companion mobile application for remote visibility and notifications
+- Full hardware functionality confirmed on the target FPGA board.
 
 ---
 
