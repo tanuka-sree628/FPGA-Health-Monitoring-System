@@ -1,1 +1,181 @@
 # FPGA-Health-Monitoring-System
+
+## Overview
+
+A hardware-implemented health monitoring solution built in Verilog HDL and deployed on the EDGE Artix-35T FPGA Development Board. The design acquires health-related input signals, classifies their severity in real time, and communicates outcomes through LEDs, a buzzer, and an LCD panel. Before any alert is raised, a dedicated persistence verification stage confirms that the abnormal condition is sustained rather than transient — reducing false positives and improving overall system reliability.
+
+---
+
+## Features
+
+- Continuous real-time acquisition and classification of health parameters
+- Persistence-based confirmation before alert escalation
+- Two-tier alert detection: HELP and CRITICAL severity levels
+- LCD panel integration for live status display
+- LED array and buzzer for immediate multi-sensory notification
+- Modular, maintainable Verilog HDL design
+- Fully synthesized and validated on physical FPGA hardware
+
+---
+
+## Project Structure
+
+```text
+FPGA-Health-Monitoring-System/
+│
+├── constraint_file/
+│   └── Constraints.xdc
+│
+├── documents/
+│
+├── results/
+│   ├── fpga_block_diagram.jpeg
+│   ├── schematic_design.jpeg
+│   ├── simulation_waveform.jpeg
+│   ├── hardware_setup.jpeg
+│   └── output_states/
+│       ├── normal_state.jpeg
+│       ├── help_state.jpeg
+│       └── critical_state.jpeg
+│
+├── simulation/
+│   └── top_tb.v
+│
+├── src/
+│   ├── top.v
+│   ├── timer.v
+│   ├── input_handler.v
+│   ├── persistence_checker.v
+│   ├── health_analyzer.v
+│   ├── output_controller.v
+│   └── lcd_controller.v
+│
+└── README.md
+```
+
+---
+
+## Module Descriptions
+
+### `top.v`
+Root integration module that connects all subsystems and orchestrates end-to-end system operation.
+
+### `timer.v`
+Produces the timing pulses and synchronization signals that coordinate activity across every module in the design.
+
+### `input_handler.v`
+Receives and conditions raw sensor inputs, preparing them for reliable downstream analysis.
+
+### `persistence_checker.v`
+Tracks whether an anomalous reading is sustained over a defined window before allowing an alert to propagate — filtering out momentary spikes.
+
+### `health_analyzer.v`
+Classifies conditioned inputs against health thresholds and determines the appropriate system response level.
+
+### `output_controller.v`
+Drives the LED array and buzzer in accordance with the active alert classification output by the health analyzer.
+
+### `lcd_controller.v`
+Formats and renders system state and alert messages onto the connected LCD display module.
+
+---
+
+## Hardware Used
+
+| Component | Details |
+|-----------|---------|
+| FPGA Board | EDGE Artix-35T Development Board |
+| Display | LCD Display Module |
+| Visual Indicators | LED Array |
+| Audio Indicator | Buzzer |
+| Peripherals | External Interface Modules |
+
+---
+
+## Software & Tools
+
+| Tool | Role |
+|------|------|
+| Verilog HDL | Hardware description and design |
+| Xilinx Vivado | Synthesis, implementation, and bitstream generation |
+| FPGA Simulation Tools | Functional verification and waveform analysis |
+
+---
+
+## FPGA Block Diagram
+
+*(See `results/fpga_block_diagram.jpeg`)*
+
+---
+
+## RTL / Schematic Design
+
+*(See `results/schematic_design.jpeg`)*
+
+---
+
+## Simulation Waveform
+
+*(See `results/simulation_waveform.jpeg`)*
+
+---
+
+## Hardware Implementation
+
+The complete design was synthesized, programmed, and tested on the EDGE Artix-35T FPGA Development Board. All hardware interfaces — including the LCD panel, LEDs, and buzzer — were connected and verified under real operating conditions.
+
+*(See `results/hardware_setup.jpeg`)*
+
+---
+
+## Output States
+
+### Normal State
+All monitored parameters fall within acceptable ranges; the system operates without generating any alerts.
+
+*(See `results/output_states/normal_state.jpeg`)*
+
+### HELP Alert State
+Activated when a moderately abnormal reading persists beyond the configured verification window, prompting a moderate-level alert response.
+
+*(See `results/output_states/help_state.jpeg`)*
+
+### CRITICAL Alert State
+Triggered by severe or dangerous parameter values that persist, resulting in full activation of all warning outputs — LEDs, buzzer, and LCD notification.
+
+*(See `results/output_states/critical_state.jpeg`)*
+
+---
+
+## Simulation
+
+Functional verification was performed using the `top_tb.v` testbench. The simulation suite covers:
+
+- Correct processing of sensor input signals
+- Accurate triggering of HELP and CRITICAL alerts
+- Persistence logic behavior under both sustained and short-lived anomalies
+- LCD output correctness and timing
+- State transition integrity across all operating modes
+
+---
+
+## Results
+
+- Synthesis and place-and-route completed without critical violations
+- HELP and CRITICAL alerts triggered correctly under defined abnormal conditions
+- LCD display maintained stable, accurate output throughout all test scenarios
+- Simulation waveforms match expected behavior across every test case
+- Full hardware functionality confirmed on the target FPGA board
+
+---
+
+## Future Enhancements
+
+- Remote monitoring via IoT connectivity
+- Wireless sensor integration to eliminate cabled interfaces
+- Cloud-based data archiving for long-term health trend analysis
+- AI-driven anomaly detection and predictive alerting
+- Companion mobile application for remote visibility and notifications
+
+---
+
