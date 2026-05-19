@@ -104,27 +104,25 @@ Formats and renders system state and alert messages onto the connected LCD displ
 
 ## FPGA Block Diagram
 
-*(See `results/fpga_block_diagram.jpeg`)*
+![FPGA Block Diagram](results/fpga_block_diagram.jpeg)
 
 ---
 
 ## RTL / Schematic Design
 
-*(See `results/schematic_design.jpeg`)*
+![Schematic Design](results/schematic_design.jpeg)
 
 ---
 
 ## Simulation Waveform
 
-*(See `results/simulation_waveform.jpeg`)*
+![Simulation Waveform](results/simulation_waveform.jpeg)
 
 ---
 
 ## Hardware Implementation
 
 The complete design was synthesized, programmed, and tested on the EDGE Artix-35T FPGA Development Board. All hardware interfaces — including the LCD panel, LEDs, and buzzer — were connected and verified under real operating conditions.
-
-*(See `results/hardware_setup.jpeg`)*
 
 ---
 
@@ -133,17 +131,17 @@ The complete design was synthesized, programmed, and tested on the EDGE Artix-35
 ### Normal State
 All monitored parameters fall within acceptable ranges; the system operates without generating any alerts.
 
-*(See `results/output_states/normal_state.jpeg`)*
+![Normal State](results/output_states/normal_state.jpeg)
 
 ### HELP Alert State
 Activated when a moderately abnormal reading persists beyond the configured verification window, prompting a moderate-level alert response.
 
-*(See `results/output_states/help_state.jpeg`)*
+![HELP State](results/output_states/help_state.jpeg)
 
 ### CRITICAL Alert State
 Triggered by severe or dangerous parameter values that persist, resulting in full activation of all warning outputs — LEDs, buzzer, and LCD notification.
 
-*(See `results/output_states/critical_state.jpeg`)*
+![CRITICAL State](results/output_states/critical_state.jpeg)
 
 ---
 
