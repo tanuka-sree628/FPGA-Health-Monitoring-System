@@ -116,6 +116,8 @@ Formats and renders system state and alert messages onto the connected LCD displ
 
 ## Simulation Waveform
 
+The waveform demonstrates the CRITICAL alert condition where all monitored abnormal inputs are activated (`sw[7:0] = 11111111`). The system generates a high health-risk score, activates the buzzer, and triggers the CRITICAL warning state.
+
 ![Simulation Waveform](results/simulation_waveform.jpeg)
 
 ---
