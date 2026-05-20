@@ -10,7 +10,7 @@ A hardware-implemented health monitoring solution built in Verilog and deployed 
 
 - Continuous real-time acquisition and classification of health parameters
 - Persistence-based confirmation before alert escalation
-- Three-tier alert detection: SAFE,HELP and CRITICAL severity levels
+- Two-tier alert detection: HELP and CRITICAL severity levels
 - LCD panel integration for live status display
 - LED array and buzzer for immediate multi-sensory notification
 - Modular, maintainable Verilog HDL design
