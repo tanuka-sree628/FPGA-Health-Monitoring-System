@@ -52,6 +52,7 @@ FPGA-Health-Monitoring-System/
 │
 ├── ml_model/
 │   └── FPGA_Vitals.ipynb
+│
 └── README.md
 ```
 
