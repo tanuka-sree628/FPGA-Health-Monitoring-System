@@ -49,7 +49,8 @@ FPGA-Health-Monitoring-System/
 │   ├── health_analyzer.v
 │   ├── output_controller.v
 │   └── lcd_controller.v
-│
+├── ml_model/
+│   └── FPGA_Vitals.ipynb
 └── README.md
 ```
 
@@ -127,6 +128,13 @@ The waveform demonstrates the CRITICAL alert condition where all monitored abnor
 The complete design was synthesized, programmed, and tested on the EDGE Artix-35T FPGA Development Board. All hardware interfaces — including the LCD panel, LEDs, and buzzer — were connected and verified under real operating conditions.
 
 ---
+
+## Machine Learning Assisted Weight Optimization
+
+A supporting machine learning model was used for weight optimization in the persistence checker module.
+
+Notebook:
+`ml_model/FPGA_Vitals.ipynb`
 
 ## Output States
 
