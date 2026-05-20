@@ -27,6 +27,13 @@ FPGA-Health-Monitoring-System/
 │   └── Constraints.xdc
 │
 ├── documents/
+│    ├── Implementation_reports
+│        ├── top_clock_utilization_routed.rpt
+│        ├── top_power_routed.rpt
+│        ├── top_timing_summary_routed.rpt
+│    ├── synthesis_report
+│        ├── top_utilization_synth.rpt
+│    └── Fpga_Health_Monitoring_System_report.pdf
 │
 ├── results/
 │   ├── fpga_block_diagram.jpeg
