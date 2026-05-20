@@ -49,6 +49,7 @@ FPGA-Health-Monitoring-System/
 │   ├── health_analyzer.v
 │   ├── output_controller.v
 │   └── lcd_controller.v
+│
 ├── ml_model/
 │   └── FPGA_Vitals.ipynb
 └── README.md
